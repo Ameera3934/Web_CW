@@ -48,5 +48,5 @@ def login_view(request: HttpRequest) -> HttpResponse:
             return render(request,'api/login.html',{'form': form})
 
 def logout_view(request: HttpRequest) -> HttpResponse:
-    return JsonResponse({'hello':'world'})
+    return render(request,'api/login.html',{'form': form})
 
