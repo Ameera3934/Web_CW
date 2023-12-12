@@ -14,6 +14,18 @@
             >
                 Other Page
             </router-link>
+            <router-link
+                class=""
+                :to="{name: 'login'}"
+            >
+                Login
+            </router-link>
+                        <router-link
+                class=""
+                :to="{name: 'register'}"
+            >
+                Register
+            </router-link>
         </div>
         <RouterView class="flex-shrink-0" />
     </main>
