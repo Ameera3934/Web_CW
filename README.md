@@ -1,6 +1,4 @@
-# Template for ECS639U Group Coursework
-
-This template should be used as the starting point for your group coursework in the module ECS639U Web Programming (at Queen Mary University of London). Use Git (github.qmul.ac.uk) to collaborate on the coursework with your group members. Module leader: Paulo Oliva <[p.oliva@qmul.ac.uk](mailto:p.oliva@qmul.ac.uk)>
+Module leader: Paulo Oliva <[p.oliva@qmul.ac.uk](mailto:p.oliva@qmul.ac.uk)>
 
 ## Local development
 
@@ -57,3 +55,43 @@ Once your project is ready to be deployed you will need to 'build' the Vue app a
 ## License
 
 This code is dedicated to the public domain to the maximum extent permitted by applicable law, pursuant to [CC0](http://creativecommons.org/publicdomain/zero/1.0/).
+
+
+## Our Team
+
+We all worked on the project together (mostly in person), but there were some tasks we had split up. Everyone contributed equally and communicated well.
+
+- Ameera Muazzam Shahid -> forms and backend
+- Ayomide Rachel Jolaoso -> forms and backend 
+- Samira Mustafa -> mixture of frontend and backend
+- Vindhya Lakshmi Makkuni -> frontend/styling
+
+## Open Shift
+
+## Admin
+
+Username: admin
+Email: admin@example.com
+Password: C00kiesAdmin
+
+## Test Users
+
+User 1:
+    - Username: test1
+    - Password: C00kies1
+
+User 2:
+    - Username: test2
+    - Password: C00kies2
+
+User 3:
+    - Username: test3
+    - Password: C00kies3
+
+User 4:
+    - Username: test4
+    - Password: C00kies4
+
+User 5:
+    - Username: test5
+    - Password: C00kies5
