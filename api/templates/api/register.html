@@ -5,13 +5,73 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/static/api/spa/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ECS639 Web Programming - Group CW Template</title>
+    <title>Register</title>
   <script type="module" crossorigin src="/static/api/spa/assets/index-969bf769.js"></script>
   <link rel="stylesheet" href="/static/api/spa/assets/index-4e5c0698.css">
 </head>
 
+<style>
+     body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="file"],
+        input[type="submit"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+        }
+</style>
+
 <body>
-    <p>Register Page</p>
+    <h2>Register Page</h2>
     <form method="post" action="{% url 'register' %}" enctype="multipart/form-data">
         {% csrf_token %}
         
@@ -42,7 +102,7 @@
             </tr>
         </table>
 
-        <input type="submit" value="register">
+        <input type="submit" value="Register">
 
     </form>
     {% if form.errors %}
