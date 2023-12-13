@@ -61,7 +61,15 @@ class LoginAPIView(APIView):
         user = authenticate(username=username, password=password)
         if user:
             # Logic for successful authentication
-            # You need to add logic here, such as returning a success response
             return Response({"message": "User authenticated"}, status=status.HTTP_200_OK)
         else:
             return Response({"error": "Invalid Credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+
+class RegisterAPIView(APIView):
+    def post(self, request, *args, **kwargs):
+        form = RegisterForm(request.data, request.FILES)
+        if form.is_valid():
+            user = form.save()
+            return Response({"message": "Registration successful"}, status=status.HTTP_201_CREATED)
+        else:
+            return Response(form.errors, status=status.HTTP_400_BAD_REQUEST)

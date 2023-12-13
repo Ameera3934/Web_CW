@@ -2,10 +2,12 @@
     <div class="register-container">
       <h2>Register Page</h2>
       <form @submit.prevent="registerUser">
+        <!-- Username creation -->
         <div class="form-group">
           <label for="username">Username</label>
           <input type="text" id="username" v-model="username">
         </div>
+        <!-- Password creation and confirmation -->
         <div class="form-group">
           <label for="password1">Password</label>
           <input type="password" id="password1" v-model="password1">
@@ -14,11 +16,22 @@
           <label for="password2">Confirm Password</label>
           <input type="password" id="password2" v-model="password2">
         </div>
+        <!-- Email -->
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" id="email" v-model="email">
         </div>
-        <!-- Additional fields like dob and profile_image can be added here -->
+        <!-- DOB -->
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" v-model="dob">
+        </div>
+
+        <!-- Profile Image -->
+       <div class="form-group">
+        <label for="profileImage">Profile Image</label>
+        <input type="file" id="profileImage" @change="onFileChange">
+       </div>
         <input type="submit" value="Register">
       </form>
       <p v-if="error" class="error">{{ error }}</p>
@@ -35,14 +48,40 @@
         password1: '',
         password2: '',
         email: '',
-        // Add additional fields like dob and profile_image
+        dob: '',
+        profileImage: null,
         error: null
       };
     },
     methods: {
+        onFileChange(event) {
+            this.profileImage = event.target.files[0];
+        },
       async registerUser() {
-        // Implement the registration logic here
-        // This typically involves making an API call to your backend
+        const formData = new FormData();
+        formData.append('username', this.username);
+        formData.append('password1', this.password1);
+        formData.append('password2', this.password2);
+        formData.append('email', this.email);
+        formData.append('dob', this.dob);
+
+        if (this.profileImage) {
+          formData.append('profile_image', this.profileImage);
+        }
+
+        const response = await fetch('http://127.0.0.1:8000/register', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (response.ok) {
+          // Redirect to login page after successful registration
+          this.$router.push('/login');
+        } else {
+          const responseData = await response.json();
+          this.error = responseData.error || 'Registration failed';
+        }
+
       }
     }
   });

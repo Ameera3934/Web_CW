@@ -7,6 +7,7 @@
         <input type="submit" value="Login">
       </form>
       <p v-if="error" class="error">{{ error }}</p>
+      <!-- adding a link to the registration page -->
       <p class="register-link">
       Don't have an account? <router-link to="/register">Register here</router-link>
     </p>
@@ -38,6 +39,8 @@
         }
         return cookieValue;
       },
+
+    //   making sure it works front and backend
       async loginUser() {
         const csrfToken = this.getCookie('csrftoken');
         try {
@@ -72,6 +75,7 @@
   </script>
   
   <style scoped>
+  /* styling similiar to the .html */
       .login-container {
     text-align: center;
     margin-top: 0;

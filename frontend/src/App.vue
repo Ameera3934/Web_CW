@@ -7,7 +7,7 @@
         |
         <router-link :to="{ name: 'login' }">Login</router-link>
         |
-        <!-- <router-link :to="{ name: 'register' }">Register</router-link> -->
+        <router-link :to="{ name: 'register' }">Register</router-link>
       </div>
       <RouterView class="flex-shrink-0" />
     </main>
@@ -23,6 +23,6 @@
   </script>
   
   <style scoped>
-    /* Add any specific styles for your app here */
+   /* specific styling if needed */
   </style>
   

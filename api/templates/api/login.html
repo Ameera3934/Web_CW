@@ -9,7 +9,8 @@
   <script type="module" crossorigin src="/static/api/spa/assets/index-969bf769.js"></script>
   <link rel="stylesheet" href="/static/api/spa/assets/index-4e5c0698.css">
 
-  <style>
+  <!-- Adding styling to the forms -->
+  <style> 
 
     .login-container{
         text-align: center;
@@ -57,7 +58,8 @@
 <body>
     <div class="login-container">
         <h2>Login Page</h2> 
-        <form method="POST" action="{% url 'login' %}" enctype="multipart/form-data">
+        <!-- Using Django templates and forms -->
+        <form method="POST" action="{% url 'login' %}" enctype="multipart/form-data"> 
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" value="Login">
