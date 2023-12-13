@@ -1,45 +1,28 @@
 <template>
     <main class="container pt-4">
-        <div>
-            <router-link
-                class=""
-                :to="{name: 'Main Page'}"
-            >
-                Main Page
-            </router-link>
-            |
-            <router-link
-                class=""
-                :to="{name: 'Other Page'}"
-            >
-                Other Page
-            </router-link>
-            <router-link
-                class=""
-                :to="{name: 'login'}"
-            >
-                Login
-            </router-link>
-                        <router-link
-                class=""
-                :to="{name: 'register'}"
-            >
-                Register
-            </router-link>
-        </div>
-        <RouterView class="flex-shrink-0" />
+      <div>
+        <router-link :to="{ name: 'main-page' }">Main Page</router-link>
+        | 
+        <router-link :to="{ name: 'other-page' }">Other Page</router-link>
+        |
+        <router-link :to="{ name: 'login' }">Login</router-link>
+        |
+        <!-- <router-link :to="{ name: 'register' }">Register</router-link> -->
+      </div>
+      <RouterView class="flex-shrink-0" />
     </main>
-</template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import { RouterView } from "vue-router";
-
-export default defineComponent({
-    components: { RouterView },
-});
-
-</script>
-
-<style scoped>
-</style>
+  </template>
+  
+  <script lang="ts">
+  import { defineComponent } from "vue";
+  import { RouterView } from "vue-router";
+  
+  export default defineComponent({
+      components: { RouterView },
+  });
+  </script>
+  
+  <style scoped>
+    /* Add any specific styles for your app here */
+  </style>
+  

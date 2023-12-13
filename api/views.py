@@ -4,6 +4,10 @@ from .forms import RegisterForm, LoginForm
 
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+
 
 def main_spa(request: HttpRequest) -> HttpResponse:
     return render(request, 'api/spa/index.html', {})
@@ -50,3 +54,14 @@ def login_view(request: HttpRequest) -> HttpResponse:
 def logout_view(request: HttpRequest) -> HttpResponse:
     return render(request,'api/login.html',{'form': form})
 
+class LoginAPIView(APIView):
+    def post(self, request, *args, **kwargs):
+        username = request.data.get("username")
+        password = request.data.get("password")
+        user = authenticate(username=username, password=password)
+        if user:
+            # Logic for successful authentication
+            # You need to add logic here, such as returning a success response
+            return Response({"message": "User authenticated"}, status=status.HTTP_200_OK)
+        else:
+            return Response({"error": "Invalid Credentials"}, status=status.HTTP_401_UNAUTHORIZED)
