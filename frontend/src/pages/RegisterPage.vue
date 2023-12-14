@@ -49,13 +49,16 @@
         password2: '',
         email: '',
         dob: '',
-        profileImage: null,
-        error: null
+        profileImage: null as File | null,
+        error: null as string | null
       };
     },
     methods: {
-        onFileChange(event) {
-            this.profileImage = event.target.files[0];
+        onFileChange(event: Event) {
+          const input = event.target as HTMLInputElement;
+          if (input.files) {
+            this.profileImage = input.files[0];
+          }
         },
       async registerUser() {
         const formData = new FormData();
