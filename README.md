@@ -95,3 +95,7 @@ User 4:
 User 5:
     - Username: test5
     - Password: C00kies5
+
+## Extra Commands 
+- Uses Django REST Framework
+- corsheaders
